@@ -8,6 +8,7 @@ public class ShoplineApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ShoplineApplication.class, args);
+		System.out.println("Se termino se cargar la app...");
 	}
 
 }
