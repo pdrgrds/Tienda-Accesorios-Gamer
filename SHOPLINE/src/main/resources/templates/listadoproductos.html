@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+   
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div style="margin-left: 20%; width: 60%;">
+      <h1> Listado de Productos </h1>
+        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Descuento</th>
+      <th scope="col">Imagen</th>
+       <th scope="col">Popular</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Proveedor</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="p : ${lstProductos}">
+    <td th:text="${p.id}"></td>
+      <td th:text="${p.descripcion}"></td>
+      <td th:text="${p.id_prod}"></td>
+      <td th:text="${p.precio}"></td>
+      <td th:text="${p.stock_actual}"></td>
+      <td th:text="${p.descuento}"></td>
+       <td th:text="${p.imagen}"></td>
+        <td th:text="${p.popular}"></td>
+        <td th:text="${p.idcategoria}"></td>
+         <td th:text="${p.proveedor}"></td>    
+        <td>
+        <form action="/editarProducto" method="post">
+        <input type="hidden" name="id" th:value="${p.id}">
+        <button type="submit" class="btn btn-info">Editar</button>
+        </form>
+        </td>
+    </tr>
+    
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
