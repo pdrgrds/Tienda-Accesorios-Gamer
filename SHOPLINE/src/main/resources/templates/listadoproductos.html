@@ -25,11 +25,11 @@
       <th></th>
     </tr>
   </thead>
+  
   <tbody>
     <tr th:each="p : ${lstProductos}">
     <td th:text="${p.id}"></td>
       <td th:text="${p.descripcion}"></td>
-      <td th:text="${p.id_prod}"></td>
       <td th:text="${p.precio}"></td>
       <td th:text="${p.stock_actual}"></td>
       <td th:text="${p.descuento}"></td>
@@ -37,6 +37,7 @@
         <td th:text="${p.popular}"></td>
         <td th:text="${p.idcategoria}"></td>
          <td th:text="${p.proveedor}"></td>    
+        
         <td>
         <form action="/editarProducto" method="post">
         <input type="hidden" name="id" th:value="${p.id}">
@@ -45,11 +46,14 @@
         </td>
     </tr>
     
-    </tr>
+  
   </tbody>
 </table>
     </div>
-    <!-- jQuery library -->
+    
+  
+</body>
+  <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Popper JS -->
@@ -57,5 +61,4 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
 </html>

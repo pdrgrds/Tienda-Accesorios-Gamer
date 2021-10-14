@@ -38,7 +38,7 @@ public class ProductoController {
 	}
 	
 	@GetMapping("/listarProducto")
-	public String listadProducto(Model model) {
+	public String listaProducto(Model model) {
 		model.addAttribute("lstProductos", repo.findAll());	
 		return "listadoproductos";
 	}
@@ -50,4 +50,5 @@ public class ProductoController {
 		model.addAttribute("lstProveedor", repop.findAll());	
 		return "crudproductos";
 	}
+	
 }
