@@ -27,13 +27,13 @@ public String grabarPag(@ModelAttribute Proveedor proveedor, Model model) {
 }
 
 @GetMapping("/listarProveedor")
-public String listaProducto(Model model) {
+public String listaProveedor(Model model) {
 	model.addAttribute("lstProveedor", repo.findAll());	
 	return "listadoproveedor";
 }
 
 @PostMapping("/editarProveedor")
-public String buscarProd(@ModelAttribute Proveedor p, Model model) {
+public String buscarProv(@ModelAttribute Proveedor p, Model model) {
 	model.addAttribute("proveedor", repo.findById(p.getId()));	
 	return "crudproveedor";
 }
