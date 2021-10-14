@@ -20,14 +20,25 @@
           
             <div class="form-group col-md-5">
               <label>CODIGO</label>
-              <input type="text" th:field="*{id}" class="form-control" id="codigo" placeholder="Ingrese Codigo">
+              <input type="number" th:field="*{id}" class="form-control" id="codigo" placeholder="Ingrese Codigo">
 			</div>         
           
-            <div class="form-group col-md-5">
+          <!--POPULAR BOLEAM NO RECIBE STRING -->
+           <!--   <div class="form-group col-md-5">
               <label for="inputPassword4">POPULAR</label>
               <input type="text" th:field="*{popular}" class="form-control" id="popular" placeholder="Ingrese nombre o Poluraridad">
           </div>
-            
+            -->
+  
+            <div class="form-group col-md-5">
+              <label for="inputState">POPULAR</label>
+              <select id="inputState" class="form-control" th:field="*{popular}">
+                <option th:value="-1" th:text="Seleccione..." selected ></option>          
+                <option th:value="1" th:text="True"></option>
+                <option th:value="2" th:text="Falso"></option> 
+              </select>
+            </div>
+      
           </div>
           
           
@@ -88,7 +99,7 @@
              
             <div class="form-group col-md-5">
               <label for="inputEmail4">DESCUENTO</label>
-               <input type="number" th:field="*{descuento}" id="descuento" class="form-control"  min="1" placeholder="0">
+               <input type="number" th:field="*{descuento}" id="descuento" class="form-control"  min="0" placeholder="0">
             </div>
             
           </div>
