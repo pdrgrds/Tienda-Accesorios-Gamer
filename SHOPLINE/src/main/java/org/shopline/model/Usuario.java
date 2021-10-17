@@ -14,7 +14,8 @@ public class Usuario {
 	private String pswrd;
 	private String fecha_nac;
 	private int idtipo;
-	private String estado;
+	private int estado;
+	
 	public int getId() {
 		return id;
 	}
@@ -57,14 +58,14 @@ public class Usuario {
 	public void setIdtipo(int idtipo) {
 		this.idtipo = idtipo;
 	}
-	public String getEstado() {
+	public int getEstado() {
 		return estado;
 	}
-	public void setEstado(String estado) {
+	public void setEstado(int estado) {
 		this.estado = estado;
 	}
 	public Usuario(int id, String nombre, String apellido, String usuario, String pswrd, String fecha_nac, int idtipo,
-			String estado) {
+			int estado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

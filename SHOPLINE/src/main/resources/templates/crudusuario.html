@@ -11,10 +11,9 @@
     <div style="margin-left: 20%; width: 60%;">
     <br>
    	<br>
-      <h1> Mantenimiento de Categorias </h1>
+      <h1> Mantenimiento de Usuarios </h1>
        <br>
-     <form action="/grabarUsuario" method="post" th:object="${usuario}">
-        
+     <form action="/grabarUsuario" method="post" th:object="${usuario}" >
          
           <div class="form-row">
           
@@ -29,7 +28,7 @@
               
           </div>  
                  
-                 <!-- th:field="*{idcategoria}" -->
+                
           <div class="form-row">
       
             <div class="form-group col-md-5">
@@ -38,7 +37,7 @@
             </div>
             <div class="form-group col-md-5">
               <label>USUARIO</label>
-              <input type="text" th:field="*{usuario}" class="form-control" id="usuario" placeholder="Ingrese Usuario">
+              <input type="text" th:field="*{usuario}" class="form-control" id="usu" placeholder="Ingrese Usuario">
             </div>
             
           </div>
@@ -59,18 +58,18 @@
            <div class="form-row">
       
             <div class="form-group col-md-5">
-              <label for="inputState">PROVEEDOR</label>
-              <select id="proveedor" class="form-control" th:field="*{idtipo}">
+              <label for="inputState">TIPO</label>
+              <select id="proveedor" class="form-control" th:field="*{idtipo}" >
               <option th:value="-1" th:text="Seleccione..." selected></option>
-              <option th:each="u : ${lstTipoUsuario}"
- 					  th:value="${u.idtipo}"
- 					  th:text="${u.descripcion}"           
+              <option th:each="t : ${lstTipoUsuario}"
+ 					  th:value="${t.idtipo}"
+ 					  th:text="${t.descripcion}"           
               ></option>              
               </select>
             </div>
           <div class="form-group col-md-5">
               <label for="inputState">POPULAR</label>
-              <select id="inputState" class="form-control" th:field="*{estado}">
+              <select id="inputState" class="form-control" th:field="*{estado}" >
                 <option th:value="-1" th:text="Seleccione..." selected ></option>          
                 <option th:value="1" th:text="True"></option>
                 <option th:value="2" th:text="Falso"></option> 
@@ -80,7 +79,7 @@
           </div>
          
           <button type="submit" class="btn btn-primary">Registrar</button>
-           <a href="/listarCategoria" class="btn btn-primary">Listar</a>
+           
           
         </form>
       </div>
