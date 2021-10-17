@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS shop;
+DROP DATABASE IF EXISTS BD_SHOPLINE;
 -- creamos la bd
-CREATE DATABASE shop;
+CREATE DATABASE BD_SHOPLINE;
 -- activamos la bd
-USE shop;
+USE BD_SHOPLINE;
 
 create table TIPO_USUARIO(
 idtipo int auto_increment,
@@ -12,17 +12,17 @@ primary key (idtipo)
 
 CREATE TABLE USUARIO(
 id  int auto_increment,
-nombre varchar(15),
+nombre varchar(25),
 apellido varchar(25),
-usuario char(45) NOT NULL unique,
-pswrd char(100) NOT NULL,
+usuario char(45) NOT NULL UNIQUE,
+pswrd varchar(100) NOT NULL,
 fecha_nac  date,
 idtipo int,
 estado  boolean,
 primary key (id),
 foreign key (idtipo) references TIPO_USUARIO(idtipo)
 );
-
+select*from usuario;
 create table TIPO_PRODUCTO(
 idcategoria int auto_increment,
 descripcion varchar(50),
@@ -42,7 +42,7 @@ id int auto_increment,
 descripcion varchar(100) not null,
 precio double not null,
 stock_actual int not null,
-descuento int,
+descuento int default 0,
 imagen LONGTEXT,
 popular boolean,
 idcategoria int not null,
@@ -100,6 +100,6 @@ insert into PROVEEDOR values (NULL, 'Proveedor05', 'Empresa que se encarga de di
 insert into PROVEEDOR values (NULL, 'Proveedor06', 'Empresa que se encarga de distribuir Accesorios', true);
 select * from PROVEEDOR;
 
-insert into PRODUCTO values (NULL, 'Monitor 29 pulgadas', 999.99, 100, null, null, true, 5, 5);
-insert into PRODUCTO values (NULL, 'PS5', 3999.99, 100, null, null, true, 1, 1);
+insert into PRODUCTO values (NULL, 'Monitor 29 pulgadas', 999.99, 100, 0, null, true, 5, 5);
+insert into PRODUCTO values (NULL, 'PS5', 3999.99, 100, 0, null, true, 1, 1);
 select * from PRODUCTO;
