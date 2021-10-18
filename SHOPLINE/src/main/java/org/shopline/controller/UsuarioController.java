@@ -26,12 +26,21 @@ public class UsuarioController {
 
 	@PostMapping("/grabarUsuario")
 	public String grabarPag(@ModelAttribute Usuario usuario, Model model) {
-		/*Usuario xd= new Usuario(12,"Nombre","Ape","L","1234567","2021-10-10",1,1);
-		
-		System.out.println(xd);
-		System.out.println("Grabo exitoso");*/
 		repo.save(usuario);	
 		model.addAttribute("lstTipoUsuario", repot.findAll());	
+		return "crudusuario";
+	}
+	
+	@GetMapping("/listarUsurio")
+	public String listaUsuario(Model model) {
+		model.addAttribute("lstUsuario", repo.findAll());	
+		return "listadousuario";
+	}
+	
+	@PostMapping("/editarUsuario")
+	public String buscarUsuario(@ModelAttribute Usuario u, Model model) {
+		model.addAttribute("usuario", repo.findById(u.getId()));
+		model.addAttribute("lstTipoUsuario", repot.findAll());		
 		return "crudusuario";
 	}
 }

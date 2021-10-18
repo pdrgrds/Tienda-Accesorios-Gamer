@@ -25,4 +25,16 @@ public class TusuarioController {
 	repo.save(tusuario);	
 	return "crudtipousuario";
 	}
+	
+	@GetMapping("/listarTusuario")
+	public String listaTusuario(Model model) {
+		model.addAttribute("lstTusuario", repo.findAll());	
+		return "listadotipousuario";
+	}
+	
+	@PostMapping("/editarTusuario")
+	public String buscarTusuario(@ModelAttribute Tusuario t, Model model) {
+		model.addAttribute("tusuario", repo.findById(t.getIdtipo()));
+		return "crudtipousuario";
+	}
 }
