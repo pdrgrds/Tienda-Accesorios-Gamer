@@ -30,4 +30,14 @@ public class UsuarioController {
 		model.addAttribute("lstTipoUsuario", repot.findAll());	
 		return "crudusuario";
 	}*/
+	
+	@GetMapping("/login")
+	public String loginPag(Model model) {	
+		return "login";
+	}
+	
+	@GetMapping("/register")
+	public String registerPag(Model model) {	
+		return "register";
+	}
 }

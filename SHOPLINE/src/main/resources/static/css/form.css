@@ -1,0 +1,32 @@
+form {
+	padding: 0 15%;
+}
+form .form-row {
+	width: 100%;
+}
+
+form .form-group {
+	min-width: 50%;
+}
+
+.btn-container {
+	padding: 5% 2%;
+    display: flex;
+    width: 100%;
+}
+
+.btn-guardar {
+    border: none;
+    margin-left: auto;
+    padding: 0.3em 2em;
+    background: red;
+    border-radius: 20px;
+    color: white;
+}
+
+.btn-cancelar {
+    padding: 0.3em 2em;
+    background: black;
+    border-radius: 20px;
+    color: white;
+}

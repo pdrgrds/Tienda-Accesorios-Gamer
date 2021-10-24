@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+#container {
+    height: 100%;
+    background-image: url("../img/background.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__template {
+    background: rgb(65, 61, 61, 66%);
+    height: 50%;
+    width: 400px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 20px;
+    height: max-content;
+}
+
+.form__template h1 {
+    margin: 0;
+    color: white;
+    font-family: "Segoe UI";
+    margin-bottom: 20px;
+}
+
+.form__template input {
+    background: transparent;
+    border: 1px solid white;
+    height: 40px;
+    font-size: 20px;
+    width: calc(90% - 40px);
+    margin: 15px 0;
+    padding: 4px 20px;
+    border-radius: 50px;
+    color: white;
+}
+
+.form__template input::placeholder { 
+    color: white; 
+    font-family: "Segoe UI";
+}
+
+.form__template button {
+    width: 90%;
+    height: 45px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    background: #F74D8C;
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.form__template p {
+    color: white;
+    align-self: flex-end;
+    font-family: "Segoe UI";
+}
+
+.form__template a {
+    color: #F74D8C;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*css custom to register*/
+
+.register__template input {
+    margin-top: 5px;
+}
+
+.register__template input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}

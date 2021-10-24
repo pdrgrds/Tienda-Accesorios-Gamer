@@ -1,0 +1,214 @@
+html, body {
+    height: 100%;
+    max-height: max-content;
+    margin: 0;
+    padding: 0;
+}
+
+#container__inicio {
+    height: 100%;
+    width: 100%;
+}
+
+p, label, h1 {
+    padding: 0;
+    margin: 0;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+/*-------------START HEADER----------------*/
+.container__header {
+    height: 100px;
+    background-image: url("../img/background.jpg");
+    padding: 0 10%;
+    display: flex;
+}
+
+.container__header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI";
+    color: white;
+}
+
+.container__header .lados {
+    width: 20%;
+}
+/*Start search*/
+.container__header .search {
+    width: 60%;
+}
+
+.search__input {
+    padding: 5px 15px;
+    border: 1px solid #707070;
+    border-radius: 50px 0 0 50px;
+    font-size: 20px;
+}
+
+.search_button {
+    padding: 4.5px 30px 4.5px 20px;
+    font-size: 20px;
+    border: 1px solid #707070;
+    background: red;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+}
+/*End search*/
+
+
+/*Start carrito*/
+.carrito { place-content: end; }
+
+.carrito__icono, .carrito__info {
+    width: max-content;
+    border: 1px solid #707070;
+    border-radius: 40px;
+    background: white;
+}
+
+.carrito__icono { border-radius: 40px 0 0 40px; padding: 5px 15px; }
+.carrito__info { border-radius: 0 40px 40px 0; padding: 5px 30px 5px 10px; border-left: none; }
+
+.carrito__icono p { background: red; padding: 0px 8px; border-radius: 50px }
+.carrito__info p { color: black; }
+/*End search*/
+
+
+.container__header .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    place-content: flex-start;
+}
+
+/*-------------END HEADER----------------*/
+
+.container__body {
+    min-height: calc(100% - 100px);
+    padding: 0 15% 40px;
+}
+
+.container__nav {
+    display: flex;
+    padding: 0% 24% 5%;
+    justify-content: space-between;
+}
+
+.item__navigation {
+    color: white;
+    width: 33%;
+    background: #7B7B7B;
+    padding: 2% 0;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Segoe UI';
+}
+
+.item__navigation:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/*-------------START BANNER--------------*/
+
+.body__banner {
+    width: 100%px;
+    height: 100%;
+    display: flex;
+}
+
+.Seccion__Categorias {
+    width: 300px;
+}
+
+.Seccion__Categorias div {
+    background: black;
+    margin: 2px;
+    display: flex;
+    height: max-content;
+}
+
+.Seccion__Categorias a {
+    width: 100%;
+    color: white !important;
+    padding: 15px;
+    font-family: "Segoe UI";
+    cursor: pointer;
+}
+
+.Seccion__Banner {
+    width: 100%;
+    margin: 2px 2px 0;
+}
+
+.Seccion__Banner div {
+    height: 400px;
+    background: red;
+}
+
+.Seccion__Banner div img{
+    height: 100%;
+    width: 100%;
+}
+
+/*--------------END BANNER--------------*/
+
+/*division*/
+.division {
+    margin-top: 20px;
+    border-bottom: 1px solid #707070;
+}
+
+.division h1 {
+    font-family: 'SEGOE UI';
+    font-size: 25px;
+}
+
+/*-----------------------*/
+.body__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__items {
+    margin: 0 5px 30px 0;
+}
+
+.item {
+    border: 1px solid #707070;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    padding: 10px 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI';
+}
+
+.item img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.container__items button{
+    background: red;
+    border: none;
+    width: 100%;
+    border-radius: 50px;
+    margin-top: 5px;
+    padding: 5px;
+    color: white;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    cursor: pointer;
+}
+/*----------------------*/
