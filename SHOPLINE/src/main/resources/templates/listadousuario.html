@@ -10,29 +10,36 @@
 <body>
 <br>
     <div style="margin-left: 20%; width: 60%;">
-      <h1> Listado de Proveedor </h1>
+      <h1> Listado de Usuario</h1>
         <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Codigo</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Password</th>
+      <th scope="col">Fecha_nac</th>
+       <th scope="col">Tipo</th>
       <th scope="col">Estado</th>
       <th></th>
     </tr>
   </thead>
   
   <tbody>
-    <tr th:each="p : ${lstProveedor}">
-    <td th:text="${p.id}"></td>
-      <td th:text="${p.nombre}"></td>
-      <td th:text="${p.descripcion}"></td>
-      <td th:text="${p.estado}"></td>
-  
-        
+    <tr th:each="u : ${lstUsuario}">
+    <td th:text="${u.id}"></td>
+      <td th:text="${u.nombre}"></td>
+      <td th:text="${u.apellido}"></td>
+      <td th:text="${u.usr_usua}"></td>
+      <td th:text="${u.pswrd}"></td>
+       <td th:text="${u.fecha_nac}"></td>
+        <td th:text="${u.idtipo}"></td>
+        <td th:text="${u.estado}"></td>
+ 
         <td>
-        <form action="/editarProveedor" method="post">
-        <input type="hidden" name="id" th:value="${p.id}">
+        <form action="/editarUsuario" method="post">
+        <input type="hidden" name="id" th:value="${u.id}">
         <button type="submit" class="btn btn-info">Editar</button>
         </form>
         </td>

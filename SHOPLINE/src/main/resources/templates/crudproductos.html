@@ -9,7 +9,6 @@
 		<div th:replace="fragments/navigation::nav"></div>
 		<form action="/grabarProducto" method="post" th:object="${producto}">
 
-
 			<div class="form-row">
 
 				<div class="form-group col-md-5">
@@ -52,7 +51,7 @@
 			<div class="form-row">
 
 				<div class="form-group col-md-5">
-					<label for="inputEmail4">PRECIO</label>
+					<label for="inputEmail4">Precio</label>
 					<input type="number" th:field="*{precio}" id="precio" class="form-control" step="0.01" min="1"
 						placeholder="0.00">
 				</div>
@@ -98,22 +97,13 @@
 				</div>
 
 			</div>
+
 			<div class="btn-container">
-			  <a href="/inicio" class="btn-cancelar"> Cancelar </a>
-			  <button type="submit" class="btn-guardar">Guardar</button>
+				<a href="/inicio" class="btn-cancelar"> Cancelar </a>
+				<button type="submit" class="btn-guardar">Guardar</button>
 			</div>
 
 		</form>
 	</div>
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
 
 </html>

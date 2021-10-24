@@ -10,11 +10,11 @@ public class Usuario {
 	private int id;
 	private String nombre;
 	private String apellido;
-	private String usuario;
+	private String usr_usua;
 	private String pswrd;
 	private String fecha_nac;
 	private int idtipo;
-	private String estado;
+	private int estado;
 	public int getId() {
 		return id;
 	}
@@ -33,11 +33,11 @@ public class Usuario {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getUsuario() {
-		return usuario;
+	public String getUsr_usua() {
+		return usr_usua;
 	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setUsr_usua(String usr_usua) {
+		this.usr_usua = usr_usua;
 	}
 	public String getPswrd() {
 		return pswrd;
@@ -57,19 +57,19 @@ public class Usuario {
 	public void setIdtipo(int idtipo) {
 		this.idtipo = idtipo;
 	}
-	public String getEstado() {
+	public int getEstado() {
 		return estado;
 	}
-	public void setEstado(String estado) {
+	public void setEstado(int estado) {
 		this.estado = estado;
 	}
-	public Usuario(int id, String nombre, String apellido, String usuario, String pswrd, String fecha_nac, int idtipo,
-			String estado) {
+	public Usuario(int id, String nombre, String apellido, String usr_usua, String pswrd, String fecha_nac, int idtipo,
+			int estado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.usuario = usuario;
+		this.usr_usua = usr_usua;
 		this.pswrd = pswrd;
 		this.fecha_nac = fecha_nac;
 		this.idtipo = idtipo;
@@ -80,9 +80,11 @@ public class Usuario {
 	}
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", usuario=" + usuario
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", usr_usua=" + usr_usua
 				+ ", pswrd=" + pswrd + ", fecha_nac=" + fecha_nac + ", idtipo=" + idtipo + ", estado=" + estado + "]";
 	}
+	
+
 	
 	
 

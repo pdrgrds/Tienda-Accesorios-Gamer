@@ -1,7 +1,7 @@
 package org.shopline.controller;
 
 import org.shopline.model.Usuario;
-/*import org.shopline.repository.ITipoUsuarioRepository;*/
+import org.shopline.repository.ITusuarioRepository;
 import org.shopline.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UsuarioController {
-/*	@Autowired
+	@Autowired
 	private IUsuarioRepository repo;
 	@Autowired
-	private ITipoUsuarioRepository repot;
+	private ITusuarioRepository repot;
 	
 	@GetMapping("/cargarUsuario")
 	public String cargarPag(Model model) {
@@ -28,8 +28,8 @@ public class UsuarioController {
 	public String grabarPag(@ModelAttribute Usuario usuario, Model model) {
 		repo.save(usuario);	
 		model.addAttribute("lstTipoUsuario", repot.findAll());	
-		return "crudusuario";
-	}*/
+		return "crudusuario";	
+	}
 	
 	@GetMapping("/login")
 	public String loginPag(Model model) {	
@@ -39,5 +39,18 @@ public class UsuarioController {
 	@GetMapping("/register")
 	public String registerPag(Model model) {	
 		return "register";
+	}
+	
+	@GetMapping("/listarUsurio")
+	public String listaUsuario(Model model) {
+		model.addAttribute("lstUsuario", repo.findAll());	
+		return "listadousuario";
+	}
+	
+	@PostMapping("/editarUsuario")
+	public String buscarUsuario(@ModelAttribute Usuario u, Model model) {
+		model.addAttribute("usuario", repo.findById(u.getId()));
+		model.addAttribute("lstTipoUsuario", repot.findAll());		
+		return "crudusuario";
 	}
 }
