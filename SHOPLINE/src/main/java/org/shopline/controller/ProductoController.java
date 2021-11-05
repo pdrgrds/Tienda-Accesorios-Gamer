@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
+
 public class ProductoController {
 	
 	@Autowired
@@ -38,7 +39,7 @@ public class ProductoController {
 		return "crudproductos";
 	}
 	
-	@GetMapping("/listarProducto")
+	@GetMapping("/Producto")
 	public String listaProducto(Model model) {
 		model.addAttribute("lstProductos", repo.findAll());	
 		return "listadoproductos";

@@ -30,3 +30,10 @@ form .form-group {
     border-radius: 20px;
     color: white;
 }
+
+.btn-listarprod {
+    padding: 0.3em 2em;
+    background: black;
+    border-radius: 20px;
+    color: white;
+}
