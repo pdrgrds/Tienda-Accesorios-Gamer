@@ -1,6 +1,6 @@
 package org.shopline.controller;
 
-import org.shopline.model.Producto;
+//import org.shopline.model.Producto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
