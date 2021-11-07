@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
+<head th:replace="fragments/header::header"> 
     <title>Getting Started: Serving Web Content</title> 
    
    <!-- Latest compiled and minified CSS -->
@@ -8,6 +8,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<div class="container__inicio">
+
+		<div th:replace="fragments/header::search"></div>
+		<div th:replace="fragments/navigation::nav"></div>
 <br>
     <div style="margin-left: 20%; width: 60%;">
       <h1> Listado de Tipo Usuario </h1>
