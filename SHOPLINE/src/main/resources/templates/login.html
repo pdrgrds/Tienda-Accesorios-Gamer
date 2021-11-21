@@ -6,13 +6,14 @@
 <body>
 
     <div id="container">
-        <div class="form__template">
+        <form class="form__template" action="/validated-login" method="post" th:object="${usuario}">
             <h1>INICIAR SESIÓN</h1>
-            <input type="text" placeholder="USUARIO">
-            <input type="password" placeholder="CONTRASEÑA">
-            <button>Login</button>
+            <input type="text" placeholder="USUARIO" id="user" th:field="*{user}">
+            <input type="password" placeholder="CONTRASEÑA" id="pswrd" th:field="*{pswrd}">
+            <button type="submit">Login</button>
+            <p class="message__error" th:text="${mensaje}"></p>
             <p>¿Eres nuevo? regístrate <a href="/register">aquí</a></p>
-        </div>
+        </form>
     </div>
 
 </body>

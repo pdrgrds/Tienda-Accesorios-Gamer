@@ -2,6 +2,7 @@ package org.shopline.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Column;
 
 @Entity
 @Table(name="USUARIO")
@@ -10,7 +11,10 @@ public class Usuario {
 	private int id;
 	private String nombre;
 	private String apellido;
-	private String usr_usua;
+	
+	@Column(name = "usr_usua")
+	private String user;
+	
 	private String pswrd;
 	private String fecha_nac;
 	private int idtipo;
@@ -33,11 +37,11 @@ public class Usuario {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getUsr_usua() {
-		return usr_usua;
+	public String getUser() {
+		return user;
 	}
-	public void setUsr_usua(String usr_usua) {
-		this.usr_usua = usr_usua;
+	public void setUser(String usr_usua) {
+		this.user = usr_usua;
 	}
 	public String getPswrd() {
 		return pswrd;
@@ -63,13 +67,13 @@ public class Usuario {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
-	public Usuario(int id, String nombre, String apellido, String usr_usua, String pswrd, String fecha_nac, int idtipo,
+	public Usuario(int id, String nombre, String apellido, String user, String pswrd, String fecha_nac, int idtipo,
 			int estado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.usr_usua = usr_usua;
+		this.user = user;
 		this.pswrd = pswrd;
 		this.fecha_nac = fecha_nac;
 		this.idtipo = idtipo;
@@ -80,7 +84,7 @@ public class Usuario {
 	}
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", usr_usua=" + usr_usua
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", usr_usua=" + user
 				+ ", pswrd=" + pswrd + ", fecha_nac=" + fecha_nac + ", idtipo=" + idtipo + ", estado=" + estado + "]";
 	}
 	

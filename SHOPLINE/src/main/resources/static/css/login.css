@@ -4,6 +4,12 @@ html, body {
     margin: 0;
 }
 
+.message__error {
+	color: white;
+    width: 100%;
+    text-align: center;
+}
+
 input:focus-visible {
     outline: none;
 }

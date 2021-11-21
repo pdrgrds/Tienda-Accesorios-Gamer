@@ -2,6 +2,7 @@ package org.shopline.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -13,10 +14,12 @@ public class Producto {
 	private double precio;
 	private int stock_actual;
 	private int descuento;
+	@Lob
 	private String imagen;
 	private String popular;
 	private int idcategoria;
 	private int proveedor;
+	
 	public int getId() {
 		return id;
 	}

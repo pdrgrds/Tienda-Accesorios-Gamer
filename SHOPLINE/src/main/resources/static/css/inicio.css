@@ -35,9 +35,11 @@ input:focus-visible {
     color: white;
 }
 
+
 .container__header .lados {
     width: 20%;
 }
+
 /*Start search*/
 .container__header .search {
     width: 60%;
@@ -80,10 +82,14 @@ input:focus-visible {
 
 
 .container__header .logo {
+    place-content: flex-start;
+}
+
+.container__header .logo a {
+    text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: 30px;
-    place-content: flex-start;
 }
 
 /*-------------END HEADER----------------*/

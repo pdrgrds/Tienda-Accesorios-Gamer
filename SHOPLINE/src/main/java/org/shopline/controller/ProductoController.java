@@ -2,6 +2,11 @@ package org.shopline.controller;
 
 import org.shopline.repository.ICategoriaRepository;
 import org.shopline.repository.IProveedorRepository;
+
+import java.io.IOException;
+import java.util.Optional;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.shopline.model.Producto;
 import org.shopline.repository.IProductoRepository;
 
@@ -11,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 
@@ -32,8 +39,18 @@ public class ProductoController {
 	}
 
 	@PostMapping("/grabarProducto")
-	public String grabarPag(@ModelAttribute Producto producto, Model model) {
-		repo.save(producto);	
+	public String grabarPag(@ModelAttribute Producto producto, Model model, @RequestParam("archivoImagen") MultipartFile multipar) {
+		try {
+			if(!multipar.isEmpty()) {
+				byte[] image = Base64.encodeBase64(multipar.getBytes());
+				String result = "data:image/png;base64, " + new String(image);
+				producto.setImagen(result);				
+				System.out.println(result);
+			}
+			repo.save(producto);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		model.addAttribute("lstCategorias", repoc.findAll());	
 		model.addAttribute("lstProveedor", repop.findAll());
 		return "crudproductos";
@@ -47,7 +64,9 @@ public class ProductoController {
 	
 	@PostMapping("/editarProducto")
 	public String buscarProd(@ModelAttribute Producto p, Model model) {
-		model.addAttribute("producto", repo.findById(p.getId()));
+		Optional<Producto> data = repo.findById(p.getId());
+		model.addAttribute("producto", data);
+		model.addAttribute("stringImagen", data.get().getImagen());
 		model.addAttribute("lstCategorias", repoc.findAll());
 		model.addAttribute("lstProveedor", repop.findAll());	
 		return "crudproductos";

@@ -1,5 +1,7 @@
 package org.shopline.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.shopline.model.Usuario;
 import org.shopline.repository.ITusuarioRepository;
 import org.shopline.repository.IUsuarioRepository;
@@ -33,11 +35,36 @@ public class UsuarioController {
 	
 	@GetMapping("/login")
 	public String loginPag(Model model) {	
+		model.addAttribute("usuario", new Usuario());
 		return "login";
+	}
+	
+	@PostMapping("/validated-login")
+	public String validatedLogin(@ModelAttribute Usuario usuario, Model model,  HttpServletResponse httpResponse) throws Exception {
+		Usuario data = repo.findByUserAndPswrd(usuario.getUser(), usuario.getPswrd());
+		if(data == null) {
+			model.addAttribute("usuario", new Usuario());
+			model.addAttribute("mensaje", "Usuario o Contraseña incorrecto");	
+			return "login";
+		} else {
+			httpResponse.sendRedirect("/inicio");
+			return "inicio";
+		}
 	}
 	
 	@GetMapping("/register")
 	public String registerPag(Model model) {	
+		model.addAttribute("usuario", new Usuario());
+		return "register";
+	}
+	
+	@PostMapping("/register-post")
+	public String registerPost(@ModelAttribute Usuario usuario, Model model) {
+		usuario.setEstado(1);
+		usuario.setIdtipo(3);
+		repo.save(usuario);
+		model.addAttribute("mensaje", "Cuenta creada exitosa");
+		model.addAttribute("usuario", new Usuario());
 		return "register";
 	}
 	

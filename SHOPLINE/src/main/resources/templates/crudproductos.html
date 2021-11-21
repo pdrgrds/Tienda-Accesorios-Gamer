@@ -10,7 +10,7 @@
 	<div class="container__inicio">
 		<div th:replace="fragments/header::search"></div>
 		<div th:replace="fragments/navigation::nav"></div>
-		<form action="/grabarProducto" method="post" th:object="${producto}">
+		<form action="/grabarProducto" method="post" th:object="${producto}" enctype="multipart/form-data">
 
 			<div class="form-row">
 
@@ -95,8 +95,8 @@
 
 				<div class="form-group col-md-5">
 					<label>IMAGEN</label>
-					<input type="text" th:field="*{imagen}" class="form-control" id="imagen"
-						placeholder="Ingrese Imagen">
+					<input type="file" accept="image/*" class="form-control-file" id="archivoImagen" name="archivoImagen" placeholder="Ingrese Imagen">
+					<input type="hidden"  th:field="*{imagen}" id="mainImagen" name="mainImagen"/>
 				</div>
 
 			</div>
