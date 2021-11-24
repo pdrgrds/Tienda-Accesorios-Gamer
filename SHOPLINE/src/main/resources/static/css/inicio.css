@@ -149,18 +149,17 @@ input:focus-visible {
 
 .Seccion__Banner {
     width: 100%;
-    margin: 2px 2px 0;
+    /*margin: 2px 2px 0;*/
 }
 
-.Seccion__Banner div {
+/*.Seccion__Banner div {
     height: 400px;
-    background: red;
 }
 
 .Seccion__Banner div img{
     height: 100%;
     width: 100%;
-}
+} */
 
 /*--------------END BANNER--------------*/
 
@@ -202,6 +201,7 @@ input:focus-visible {
 
 .item img {
     height: 150px;
+    width: 150px;
     margin-bottom: 10px;
 }
 
@@ -218,3 +218,32 @@ input:focus-visible {
     cursor: pointer;
 }
 /*----------------------*/
+
+
+.container__body__search {
+	display: flex;
+}
+
+.container__body__search .body__items {
+	height: max-content;
+	padding-left: 5px;
+}
+
+#carousel__banner {
+	width: 100%;
+}
+
+#carousel__banner .carousel-inner {
+	height: 500px;
+}
+
+#carousel__banner .carousel-inner .carousel-item, #carousel__banner .carousel-inner .carousel-item img {
+	height: 100%;
+}
+
+
+
+
+
+
+

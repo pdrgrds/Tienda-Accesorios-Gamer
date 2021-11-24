@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="fragments/header::header"></head>
+<body>
+
+    <div id="container__inicio">
+        <div th:replace="fragments/header::search"></div>
+		<div th:replace="fragments/navigation::nav"></div>
+        <div class="container__body container__body__search">
+            <div th:fragment="banners" class="body__banner">
+                <div class="Seccion__Categorias">
+                    <div th:each="c : ${listCateg}">
+                    	<a th:href="|/buscar?id=${c.idcategoria}|" th:text="${c.descripcion}"></a>
+                	</div>
+                </div>
+            </div>
+            <div class="body__items">
+                <div class="container__items" th:each="p : ${listProd}">
+                    <div class="item">
+                        <img th:src="${p.imagen}" alt="Not Found"/>
+                        <p th:text="|S/. ${p.precio}|"></p>
+                    </div>
+                    <button>añadir carrito</button>
+                </div>
+
+                <!-- ELIMINAR LO DE ABAJO SI QUIEREN :v-->
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
