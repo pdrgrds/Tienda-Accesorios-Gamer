@@ -31,6 +31,7 @@
 						<th scope="col">Proveedor</th>
 						<th></th>
 						<th></th>
+												<th></th>
 					</tr>
 				</thead>
 
@@ -45,10 +46,9 @@
 						<td th:text="${p.popular}"></td>
 						<td th:text="${p.idcategoria}"></td>
 						<td th:text="${p.proveedor}"></td>
-
 						<td>
-							<form action="/editarProducto" method="post">
-								<input type="hidden" name="id" th:value="${p.id}">
+							<form action="/editarProducto" method="POST">
+								<input type="hidden" name="id" th:value="${p.id}"/>
 								<button type="submit" class="btn btn-info">Editar</button>
 							</form>
 						</td>
