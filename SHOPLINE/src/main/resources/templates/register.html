@@ -8,11 +8,11 @@
     <div id="container">
         <form class="form__template register__template" action="/register-post" method="post" th:object="${usuario}">
             <h1>REGISTRAR</h1>
-            <input type="text" placeholder="NOMBRE" id="nombre" th:field="*{nombre}">
-            <input type="text" placeholder="APELLIDO" id="apellido" th:field="*{apellido}">
-            <input type="text" placeholder="USUARIO" id="usuario" th:field="*{user}">
-            <input type="password" placeholder="CONTRASEÑA" id"password" th:field="*{pswrd}">
-            <input type="date" placeholder="FECHA NACIMIENTO" id="fechanacimiento" th:field="*{fecha_nac}">
+            <input type="text" placeholder="NOMBRE" id="nombre" th:field="*{nombre}" required>
+            <input type="text" placeholder="APELLIDO" id="apellido" th:field="*{apellido}" required>
+            <input type="text" placeholder="USUARIO" id="usuario" th:field="*{user}" required>
+            <input type="password" placeholder="CONTRASEÑA" id"password" th:field="*{pswrd}" required>
+            <input type="date" placeholder="FECHA NACIMIENTO" id="fechanacimiento" th:field="*{fecha_nac}" required>
             <button type="submit">Registrar</button>
         	<p class="message__error" th:text="${mensaje}"></p>
             <p>¿Ya tienes una cuenta? inicia sesión <a href="/login">aquí</a></p>

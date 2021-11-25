@@ -92,3 +92,15 @@ input:focus-visible {
 .register__template input::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
+
+.input__error {
+	    border: 1px  solid red !important;
+}
+
+.message__error {
+    margin-top: -14px;
+    margin-bottom: 21px;
+    color: red;
+    text-align: start;
+    padding-left: 38px;
+}

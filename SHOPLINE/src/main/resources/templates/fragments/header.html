@@ -15,9 +15,9 @@
 	<div th:fragment="search" class="container__header">
     	<div class="logo lados"><a href="inicio">SHOPIFY</a></div>
 		    <div class="search">
-		        <div class="container__search">
-		            <input placeholder="Busca tu producto.." class="search__input" />
-		            <button class="search_button">
+		        <form class="container__search" method="GET" action="/buscar" >
+		            <input placeholder="Busca tu producto.." name="nombre" class="search__input" />
+		            <button type="submit" class="search_button">
 		                <img height="25" src="img/lupa.png" />
 		            </button>
 		        </div>

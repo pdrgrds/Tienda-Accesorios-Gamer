@@ -6,10 +6,12 @@
 <body>
 
     <div id="container">
-        <form class="form__template" action="/validated-login" method="post" th:object="${usuario}">
+        <form class="form__template" action="/validated-login" onsubmit="return validateForm()" method="post" th:object="${usuario}">
             <h1>INICIAR SESIÓN</h1>
             <input type="text" placeholder="USUARIO" id="user" th:field="*{user}">
+            <span id="message_login"></span>
             <input type="password" placeholder="CONTRASEÑA" id="pswrd" th:field="*{pswrd}">
+            <span id="message_password"></span>
             <button type="submit">Login</button>
             <p class="message__error" th:text="${mensaje}"></p>
             <p>¿Eres nuevo? regístrate <a href="/register">aquí</a></p>
@@ -17,4 +19,41 @@
     </div>
 
 </body>
+<script>
+	function validateForm() {
+	  let user = document.getElementById("user");
+  	  let password = document.getElementById("pswrd");
+  	  let msgUser = document.getElementById("message_login");
+  	  let msgPswrd = document.getElementById("message_password");
+  	  
+	  if (user.value == "") {
+		
+	    user.classList.add("input__error");
+	    msgUser.classList.add("message__error")
+	    msgUser.innerHTML  = "Ingrese un usuario";
+	    return false;
+	    
+	  } else {
+		
+		user.classList.remove("input__error");
+		msgUser.classList.remove("message__error")
+		msgUser.innerHTML  = "";
+	  }
+	  
+	  if (password.value == ""){
+		
+		password.classList.add("input__error");
+		msgPswrd.classList.add("message__error")
+		msgPswrd.innerHTML  = "Ingrese una contraseña";
+		return false;
+		
+	  } else {
+		
+		password.classList.remove("input__error");
+		msgPswrd.classList.remove("message__error")
+		msgPswrd.innerHTML  = "";
+	  }
+	  
+	}
+</script>
 </html>

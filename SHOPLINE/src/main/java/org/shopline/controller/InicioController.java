@@ -33,8 +33,17 @@ public class InicioController {
 	}
 	
 	@GetMapping("/buscar")
-	public String cargarBuscar(Model model, @RequestParam int id) {
-		model.addAttribute("listProd", repoProd.findByIdcategoria(id));
+	public String cargarBuscar(Model model, @RequestParam(required=false) String id, @RequestParam(required=false) String nombre) {
+		if(id != null) {
+			model.addAttribute("listProd", repoProd.findByIdcategoria(Integer.parseInt(id)));			
+		}
+		else if (nombre != null) {
+			model.addAttribute("listProd", repoProd.findByDescripcion(nombre));		
+		}
+		else {
+			model.addAttribute("listProd", repoProd.findAll());
+		}
+		
 		model.addAttribute("listCateg", repoCatg.findAll());
 		return "search";
 	}
