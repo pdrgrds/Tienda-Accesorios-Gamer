@@ -103,3 +103,13 @@ select * from PROVEEDOR;
 insert into PRODUCTO values (NULL, 'Monitor 29 pulgadas', 999.99, 100, 0, null, true, 5, 5);
 insert into PRODUCTO values (NULL, 'PS5', 3999.99, 100, 0, null, true, 1, 1);
 select * from PRODUCTO;
+
+insert into BOLETA values(NULL, 1, '2020-02-13', 999);
+insert into BOLETA values(NULL, 2, '2020-02-13', 100);
+insert into BOLETA values(NULL, 3, '2019-04-12', 1999);
+insert into BOLETA values(NULL, 4, '2019-11-29', 2999);
+
+insert into DETALLE_BOLETA values(NULL, 10, 2,5,600,3000);
+insert into DETALLE_BOLETA values(NULL, 12, 2,1,700,6000);
+insert into DETALLE_BOLETA values(NULL, 13, 1,3,800,7000);
+insert into DETALLE_BOLETA values(NULL, 14, 1,3,800,7000);
